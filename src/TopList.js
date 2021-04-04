@@ -53,7 +53,11 @@ export default function TopList() {
             >
               {person.username}
             </Typography>
-            {" — Antall følgere: "}{person.instagram_sub_count}
+            {" — Antall følgere: "}{person.instagram_sub_count}{". "} 
+            {person.nrk_hosted_programs ? "NRK programmer: ":null}
+            {person.nrk_hosted_programs ? person.nrk_hosted_programs.map(
+              program=>(<a href={program.url}>{program.title} </a>)):null}
+            
           </React.Fragment>
         }
       />
